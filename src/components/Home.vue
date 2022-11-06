@@ -4,11 +4,14 @@
         <div class="row">
             <div class="col col-12 align-items-center justify-content-center">
                 <blockquote>
-                    &#8220;Welcome {{validUserName}}!&#8221;
+                  <br><br>
+                    Hi,👋🏼 {{validUserName}}!
                     <footer>
                     <small>
+                      <br>
                         <em>&mdash;Eagle Financial Services, your Midwest Financial Services Partner.</em>
                     </small>
+                      <br><br>
                     </footer>
                 </blockquote>
             </div>
@@ -21,21 +24,21 @@
             <div class="col col-12 col-sm-10 col-md-10">
                 <div class="card-group">
                 <div class="card">
-                  <img :src="require('@/assets/customer.jpg')" class="card-img-top" style="height: 15rem">
+                  <img :src="require('@/assets/cus.jpg')" class="card-img-top" style="height: 15rem">
                   <div class="card-body">
                     <h5 class="card-title">Customers</h5>
                     <a @click="viewCustomers" class="btn btn-primary">View Details</a>
                   </div>
                 </div>
                 <div class="card">
-                  <img :src="require('@/assets/nonstock.jpg')" class="card-img-top" style="height: 15rem">
+                  <img :src="require('@/assets/inv.jpg')" class="card-img-top" style="height: 15rem">
                   <div class="card-body">
                     <h5 class="card-title">Investments</h5>
                     <a @click="viewInvestments" class="btn btn-primary">View Details</a>
                   </div>
                 </div>
                 <div class="card">
-                  <img :src="require('@/assets/stocks.jpg')" class="card-img-top" style="height: 15rem">
+                  <img :src="require('@/assets/stock.jpg')" class="card-img-top" style="height: 15rem">
                   <div class="card-body">
                     <h5 class="card-title">Stocks</h5>
                     <a @click="viewStocks" class="btn btn-primary">View Details</a>

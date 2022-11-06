@@ -1,6 +1,7 @@
 <template>
     <ul class="nav justify-content-end">
         <div class="EFS">Eagle Financial Services</div>
+      <br> <br> <br> <br> <br>
         <li class="nav-item active">
             <router-link to="/">Home</router-link> |
         </li>
@@ -8,12 +9,12 @@
             <router-link :to="{name: 'CustomerList'}">Customers</router-link>|
         </li>
         <li class="nav-item">
-            <router-link :to="{name: 'InvestmentList'}">Investments</router-link>
-        </li>|
+            <router-link :to="{name: 'InvestmentList'}">Investments</router-link>|
+        </li>
 
        <li class="nav-item">
             <router-link :to="{name: 'StockList'}">Stocks</router-link>
-        </li>|
+        </li>
 
         <li class="nav-item" v-if="!authenticated" @click="login" >
             | <router-link :to="{name: 'Auth'}">Log in</router-link>
@@ -105,11 +106,15 @@
     }
     .nav {
         padding: 1em;
-        background-color: cadetblue;
+        background-color: darkseagreen;
+          margin-top: 50px;
+
 
         li {
             font-weight: bold;
-            color: #2c3e50;
+            color: papayawhip;
+           margin-top: 50px;
+
         }
 
 
@@ -118,14 +123,19 @@
             padding: .5em;
 
 
+
+
             &.router-link-exact-active {
-                color: #42b983;
+                color: whitesmoke;
             }
         }
 
 
         .EFS{
-            margin-right: 33em;
+            margin-right: 20em;
+          margin-top: 50px;
+          color:whitesmoke;
+          font-size: x-large;
         }
     }
 

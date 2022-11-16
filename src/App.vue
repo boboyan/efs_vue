@@ -1,7 +1,6 @@
 <template>
     <ul class="nav justify-content-end">
         <div class="EFS">Eagle Financial Services</div>
-      <br> <br> <br> <br> <br>
         <li class="nav-item active">
             <router-link to="/">Home</router-link> |
         </li>
@@ -9,13 +8,11 @@
             <router-link :to="{name: 'CustomerList'}">Customers</router-link>|
         </li>
         <li class="nav-item">
-            <router-link :to="{name: 'InvestmentList'}">Investments</router-link>|
-        </li>
-
-       <li class="nav-item">
-            <router-link :to="{name: 'StockList'}">Stocks</router-link>
-        </li>
-
+            <router-link :to="{name: 'InvestmentList'}">Investments</router-link>  
+        </li>|
+         <li class="nav-item">
+            <router-link :to="{name: 'StockList'}">Stocks</router-link>  
+        </li>|
         <li class="nav-item" v-if="!authenticated" @click="login" >
             | <router-link :to="{name: 'Auth'}">Log in</router-link>
         </li>
@@ -30,7 +27,7 @@
 </template>
 <script>
     import router from './router';
-    import {APIService} from './https/APIService';
+    import {APIService} from './http/APIService';
     const apiService = new APIService();
 
 
@@ -43,11 +40,12 @@
                 { title: 'Home', url:"/"},
                 { title: 'Customers', url:"/customer-list" },
                 { title: 'Investments', url:"/investment-list" },
+                { title: 'Stocks', url:"/stock-list" },
             ]
         }),
         mounted() {
             apiService.getCustomerList().then(response => {
-                this.authenticated = true;
+              this.authenticated = true;
             }).catch(error => {
                 if (error.response.status === 401) {
                     localStorage.removeItem('isAuthenticates');
@@ -67,15 +65,6 @@
                 // router.push('/');
                 window.location = "/"
             },
-           viewCustomers() {
-        router.push('/customer-list');
-      },
-      viewInvestments() {
-        router.push('/investment-list');
-      },
-       viewStocks() {
-        router.push('/stock-list');
-      },
             login() {
                 router.push("/auth");
             },
@@ -95,7 +84,7 @@
     #nav {
         padding: 30px;
         background-color: cadetblue;
-
+        
         a {
             font-weight: bold;
             color: #2c3e50;
@@ -106,15 +95,11 @@
     }
     .nav {
         padding: 1em;
-        background-color: darkseagreen;
-          margin-top: 50px;
-
-
+        background-color: cadetblue;
+        
         li {
             font-weight: bold;
-            color: papayawhip;
-           margin-top: 50px;
-
+            color: #2c3e50;
         }
 
 
@@ -123,24 +108,16 @@
             padding: .5em;
 
 
-
-
             &.router-link-exact-active {
-                color: whitesmoke;
+                color: #42b983;
             }
         }
 
 
         .EFS{
-            margin-right: 20em;
-          margin-top: 50px;
-          color:whitesmoke;
-          font-size: x-large;
+            margin-right: 33em;
         }
     }
 
 
 </style>
-
-
-
